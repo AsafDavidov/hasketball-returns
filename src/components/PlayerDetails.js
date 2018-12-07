@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
-
+import {connect} from 'react-redux'
 const PlayerDetails = ({ selectedPlayer }) => {
   return (
     <Card
@@ -23,10 +23,4 @@ const PlayerDetails = ({ selectedPlayer }) => {
   )
 }
 
-export default PlayerDetails
-
-{/* <div>
-  <img src={selectedPlayer.image_url}></img>
-  <p>{selectedPlayer.name}</p>
-
-</div> */}
+export default connect(({selectedPlayer})=>({selectedPlayer}))(PlayerDetails) 
